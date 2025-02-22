@@ -130,4 +130,4 @@ data = JSON.parse(file)
 
 result = weekly_shift_by_employee(data).sort_by { |data| data[:StartOfWeek] }
 File.write("response.json", JSON.pretty_generate(result))
-puts result
+puts result.map(&:to_json)
